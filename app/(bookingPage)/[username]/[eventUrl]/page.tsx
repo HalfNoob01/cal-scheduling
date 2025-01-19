@@ -51,7 +51,7 @@ async function getData(eventUrl: string, userName: string) {
 
 interface iAppProps {
   params: { username: string; eventUrl: string };
-  searchParams: { date?: string; time?: string };
+  searchParams?: { date?: string; time?: string };
 }
 
 export default async function BookingFormRoute({
