@@ -13,6 +13,7 @@ import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { UploadDropzone } from "../lib/uploadthing";
 import { toast } from "sonner";
+import Image from "next/image";
 
 interface iAppProps {
      fullName : string;
@@ -66,7 +67,7 @@ export default function SettingsForm ( { email, fullName, profileImage } : iAppP
                    {
                     currentProfileImage ? (
                         <div className="relative size-16">
-                             <img src={currentProfileImage} alt="Profile Image" width={100} height={100} className="size-16 rounded-lg" />
+                             <Image src={currentProfileImage} alt="Profile Image" width={100} height={100} className="size-16 rounded-lg" />
                              <Button onClick={handleDelete} type="button" variant="destructive"  className="absolute -top-3 -right-3 size-8 rounded-2xl">
                                 <X className="size-6"/>
                              </Button>

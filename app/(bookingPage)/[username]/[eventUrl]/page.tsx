@@ -48,16 +48,22 @@ async function getData(eventUrl: string, userName: string) {
 
   return data;
 }
+
+interface iAppProps {
+  params: { username: string; eventUrl: string };
+  searchParams: { date?: string; time?: string };
+}
+
 export default async function BookingFormRoute({
   params,
   searchParams,
-}: {
-  params: { username: string; eventUrl: string };
-  searchParams: { date?: string; time?: string };
-}) {
+}: iAppProps ) {
+ 
   const { username, eventUrl } = await params;
   const data = await getData(eventUrl, username);
+
   const { date, time } = await searchParams;
+ 
   const selectedDate = date ? new Date(date as string) : new Date();
   const formattedDate = new Intl.DateTimeFormat("en-US", {
     weekday: "long",
