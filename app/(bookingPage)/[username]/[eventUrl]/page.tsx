@@ -63,7 +63,7 @@ export default async function BookingFormRoute({
   const data = await getData(eventUrl, username);
 
   const { date, time } = await searchParams;
- 
+   console.log(date)
   const selectedDate = date ? new Date(date as string) : new Date();
   const formattedDate = new Intl.DateTimeFormat("en-US", {
     weekday: "long",

@@ -36,8 +36,9 @@ export default function RenderCalendar ({ availabillity } : iAppProps) {
 
      const handleDateChange = (date : DateValue) => {
         setDate(date as CalendarDate);
-
+     
         const url = new URL(window.location.href);
+        console.log(url)
         url.searchParams.set("date", date.toString());
         router.push(url.toString())
      }
